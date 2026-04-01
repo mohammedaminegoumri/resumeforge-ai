@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy: #0f1729;
+  --navy-mid: #1a2540;
+  --gold: #e8b86d;
+  --gold-light: #f5d9a8;
+  --gold-dark: #c49a4a;
+  --cream: #faf8f4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); -webkit-font-smoothing: antialiased; }
+.font-display { font-family: 'Syne', sans-serif; }
+.gradient-text {
+  background: linear-gradient(135deg, var(--gold) 0%, #f5d9a8 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 3px; }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 0.5s ease-out forwards; }
+.fade-in-1 { animation: fadeInUp 0.5s 0.1s ease-out forwards; opacity: 0; }
+.fade-in-2 { animation: fadeInUp 0.5s 0.2s ease-out forwards; opacity: 0; }
+.fade-in-3 { animation: fadeInUp 0.5s 0.3s ease-out forwards; opacity: 0; }
+
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.shimmer { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+
+@keyframes pulse-dot { 0%,80%,100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
+.dot-1 { animation: pulse-dot 1.4s ease-in-out infinite; }
+.dot-2 { animation: pulse-dot 1.4s 0.2s ease-in-out infinite; }
+.dot-3 { animation: pulse-dot 1.4s 0.4s ease-in-out infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { animation: spin 1s linear infinite; }
+
+@keyframes progress-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.progress-animated {
+  background: linear-gradient(90deg, #c49a4a 0%, #e8b86d 50%, #c49a4a 100%);
+  background-size: 200% auto;
+  animation: progress-shine 2s linear infinite;
+}
